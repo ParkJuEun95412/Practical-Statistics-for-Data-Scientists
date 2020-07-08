@@ -23,3 +23,7 @@ install.packages("matrixStats")
 library(matrixStats)
 
 weightedMedian(state[['Murder.Rate']],w=state[['Population']])
+
+# 로버스트하다. 극단값에 덜 민감하다
+# 평균에 비해 중위값이나 절사평균이 좀 더 로버스트하다.
+
