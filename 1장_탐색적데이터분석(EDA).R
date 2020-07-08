@@ -7,6 +7,19 @@ state[["Population"]] #[[]]
 attach(state) #attach함수를 이용하여 속성을 변수로 만듦
 detach(state) #detach함수 이용하여 속성의 변수 사용 해제
 
-mean(state$Population) #평균
-mean(state$Population,trim=0.1) #절사평균
-median(state$Population) #중위값(중간값)
+mean(state$Population) # 평균
+# 6162876
+mean(state$Population,trim=0.1) # 절사평균
+# 4783697
+median(state$Population) # 중위값(중간값)
+# 4436370
+
+#가중평균
+weighted.mean(state[['Murder.Rate']],w=state[['Population']])
+# 4.445834
+
+#가중중간값 계산을 위해 패키지 설치
+install.packages("matrixStats")
+library(matrixStats)
+
+weightedMedian(state[['Murder.Rate']],w=state[['Population']])
